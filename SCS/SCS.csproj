@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A33CEA3E-EF74-4534-A896-CDE1E9F28381}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SCS</RootNamespace>
+    <AssemblyName>SCS</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Context.cs" />
+    <Compile Include="ExtandedStack.cs" />
+    <Compile Include="Gfc\Gfc.cs" />
+    <Compile Include="Gfc\GfcGrammaBasic.cs" />
+    <Compile Include="Gfc\GfcProduction.cs" />
+    <Compile Include="Gfc\GfcProductionDescription.cs" />
+    <Compile Include="Gfc\GfcSymbol.cs" />
+    <Compile Include="Gfc\GfcProductionSet.cs" />
+    <Compile Include="Gfc\Gramma\Gramma.cs" />
+    <Compile Include="Gfc\Gramma\SRIdentList.cs" />
+    <Compile Include="Gfc\Gramma\SRprogram.cs" />
+    <Compile Include="Gfc\Gramma\Program\SRimport.cs" />
+    <Compile Include="Gfc\Gramma\SRUndefined.cs" />
+    <Compile Include="Gfc\LL1Gfc.cs" />
+    <Compile Include="Gfc\GfcSemanticRecord.cs" />
+    <Compile Include="Parser.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="regularPart.cs" />
+    <Compile Include="Scanner.cs" />
+    <Compile Include="scannerBuilder.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NFA\NFA.csproj">
+      <Project>{D5CF06A1-8973-448C-AF0E-259F587A03B0}</Project>
+      <Name>NFA</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Gfc\TestGramma\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
